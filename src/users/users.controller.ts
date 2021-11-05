@@ -8,6 +8,11 @@ export class UsersController {
   constructor(private usersService: UsersService) {
   }
 
+  @Get('/hi')
+  getHello() {
+    return 'Hello world!';
+  }
+
   @Post()
   create(@Body() userDto: CreateUserDto) {
     return this.usersService.createUser(userDto)
